@@ -1,15 +1,25 @@
 import { useState } from "react";
-import { Maincontent, Sidebar, Musicplayer } from "./containers/index";
+import {
+  Home,
+  Sidebar,
+  Musicplayer,
+  Layout,
+  Search,
+  Library,
+} from "./containers/index";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="app w-full h-screen flex flex-col justify-between bg-black p-2 gap-2">
-      <section className="b w-full flex flex-grow bg-black gap-2">
-        <Sidebar />
-        <Maincontent />
-      </section>
-      <section className=" w-full mt-auto ">
-        <Musicplayer />
-      </section>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/library" element={<Library />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
