@@ -6,6 +6,7 @@ export default {
       colors: {
         "main-bg": "#161616",
         "secondary-bg": "#282828",
+        "text-grey": "#B3B3B3",
       },
     },
   },
